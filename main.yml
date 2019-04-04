@@ -1,0 +1,19 @@
+---
+- hosts: [server]
+  remote_user: cloud-user
+
+  tasks:
+
+  - name: Create deploy_directory
+    file:
+      path: deploy_directory/
+      state: directory
+
+  - name: Copy newfile.txt
+    copy:
+      src: newfile.txt
+      dest: deploy_directory/newfile.txt
+
+
+
+
